@@ -4,6 +4,7 @@ import lombok.Data;
 
 public @Data class JogadorListaDTO {
 
+    private Long id;
     private String nome;
     private String time;
 
