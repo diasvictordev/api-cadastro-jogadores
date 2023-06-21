@@ -4,11 +4,17 @@ import br.ueg.api.model.IEntidade;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
+import lombok.Setter;
+import org.hibernate.Hibernate;
+
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.Objects;
 
 import static jakarta.persistence.GenerationType.SEQUENCE;
 
+@Getter
+@Setter
 @Data
 @Entity
 @Table(name="tbl_jogador",
@@ -64,4 +70,12 @@ public class Jogador implements IEntidade<Long> {
 
         this.id = id;
     }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        Jogador jogador = (Jogador) o;
+        return id != null && Objects.equals(id, jogador.id);
+    }
+
 }
