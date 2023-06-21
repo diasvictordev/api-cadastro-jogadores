@@ -1,4 +1,4 @@
-package br.ueg.Cadastro_de_jogadores_de_futebol.configurations;
+package br.ueg.Cadastro_de_jogadores_de_futebol.api.configurations;
 
 /*
  * WebConfig.java
